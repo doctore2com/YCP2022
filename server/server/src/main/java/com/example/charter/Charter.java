@@ -1,14 +1,12 @@
-package charter;
+package com.example.charter;
 
-import boat.Boat;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -19,16 +17,14 @@ import java.util.Date;
 public class Charter {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="charterName")
     private String name;
     private String description;
     private Date startCharter;
     private Date endCharter;
     private String port;
-
-
-    @ManyToOne
-    private Boat boat;
 
 
 }

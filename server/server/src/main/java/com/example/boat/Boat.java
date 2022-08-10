@@ -1,11 +1,10 @@
-package boat;
+package com.example.boat;
 
-import charter.Charter;
+import com.example.charter.Charter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 import javax.persistence.*;
 
@@ -19,11 +18,13 @@ public class Boat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="boatName")
     private String name;
     private String description;
     private String opinions;
     private String landlord;
     private String manufacturer;
+    private String imageSource;
     private int placesInside;
     private int cabins;
     private int bunk;
@@ -31,15 +32,7 @@ public class Boat {
     private int priceOutOfSeason;
     private int year;
     private int power;
-    private int range;
-
-
-
-//    @OneToMany
-//    private Charter charter;
-
-
-//    public Boat(Long boatId, String s, String s1) {
-//
-//    }
+    private int distance;
+    @ManyToOne
+    private Charter charter;
 }

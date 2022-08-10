@@ -1,7 +1,5 @@
-package charter;
+package com.example.charter;
 
-import boat.Boat;
-import charter.Charter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

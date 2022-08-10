@@ -1,27 +1,23 @@
-package charter;
+package com.example.charter;
 
-import boat.Boat;
-import boat.BoatRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class CharterService {
 
-    @Autowired
-    private CharterRepository charterRepository;
-    private BoatRepository boatRepository;
+    private final CharterRepository charterRepository;
+//    private final BoatRepository boatRepository;
 
-    public List<Charter> getAllChartersByBoat(Long boatId) {
-        List<Charter> charters = new ArrayList<>();
-        charterRepository.findCharterByBoatId(boatId)
-                .forEach(charters::add);
-        return charters;
-    }
+//    public List<Charter> getAllChartersByBoat(Long boatId) {
+//        List<Charter> charters = new ArrayList<>();
+//        charterRepository.findCharterByBoatId(boatId)
+//                .forEach(charters::add);
+//        return charters;
+//    }
     public List<Charter> getAllCharters(){
         return charterRepository.findAll();
     }
@@ -31,7 +27,7 @@ public class CharterService {
     }
 
     public void addCharter(Charter charter, Long boatId) {
-        Boat boat = boatRepository.getById(boatId);
+//        Boat boat = boatRepository.getById(boatId);
         charterRepository.save(charter);
     }
 

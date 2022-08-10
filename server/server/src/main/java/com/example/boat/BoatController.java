@@ -1,6 +1,5 @@
-package boat;
+package com.example.boat;
 
-import boat.Boat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +7,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/boats")
-
 public class BoatController {
 
     @Autowired
@@ -27,7 +25,7 @@ public class BoatController {
     @PostMapping("/addBoat")
     public void addBoat(@RequestBody Boat boat) {
         boatService.addBoat(boat);
-    }
+    }   
 
     @PostMapping("/updateBoat")
     public void updateBoat(@RequestBody Boat boat) {

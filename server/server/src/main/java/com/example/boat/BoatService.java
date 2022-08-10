@@ -1,23 +1,17 @@
-package boat;
+package com.example.boat;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class BoatService {
 
-    @Autowired
-    private BoatRepository boatRepository;
+    private final BoatRepository boatRepository;
 
-    public List<Boat> getAllBoatsByBoat(Long boatId) {
-        List<Boat> boats = new ArrayList<>();
-        boatRepository.findBoatByBoatId(boatId)
-                .forEach(boats::add);
-        return boats;
-    }
+
     public List<Boat> getAllBoats(){
         return boatRepository.findAll();
     }
