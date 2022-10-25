@@ -31,6 +31,6 @@ public class BoatService {
     public void deleteBoat(Long id) {
         Boat boat = boatRepository.findById(id).get();
         boatRepository.delete(boat);
-        
-    }
+        adding testdata2;
+   }
 }
